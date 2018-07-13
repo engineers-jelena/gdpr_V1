@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GDPRiS.Api</name>
+    </assembly>
+    <members>
+        <member name="M:GDPRiS.Api.Controllers.UserController.Login(GDPRiS.Api.Models.User.UserLoginModel)">
+            <summary>
+            Logins user.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:GDPRiS.Api.Controllers.UserController.Register(GDPRiS.Api.Models.User.UserRegisterModel)">
+            <summary>
+            Temperery method/during development.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:GDPRiS.Api.Controllers.UserController.CheckEmail(System.String,System.Int32)">
+            <summary>
+            Method that checks if email is already registrated for existing user.
+            </summary>
+            <param name="email">Email we need to check.</param>
+            <param name="userId">Optional User Id parametar that will be excluded from check. Used when editing existing account.</param>
+            <returns></returns>
+        </member>
+        <member name="M:GDPRiS.Api.Controllers.UserController.ForgotPassword(System.String)">
+            <summary>
+            Method that sends reset password email.
+            </summary>
+            <param name="email">The email.</param>
+            <returns></returns>
+        </member>
+        <member name="M:GDPRiS.Api.Controllers.UserController.ResetPasswordConfirmation(System.String)">
+            <summary>
+            Method that is called from reset password email link.
+            </summary>
+            <param name="hash">Password reset code.</param>
+            <returns></returns>
+        </member>
+        <member name="M:GDPRiS.Api.Controllers.UserController.SetNewPassword(GDPRiS.Api.Models.User.UserResetPasswordModel)">
+            <summary>
+            Method that is called to reset password.
+            </summary>
+            <param name="model">The model.</param>
+            <returns></returns>
+        </member>
+        <member name="P:GDPRiS.Api.Helpers.TokenAuthorizeAttribute.Roles">
+            <summary>
+            Gets or sets the roles the user is in.
+            </summary>
+            <value>
+            The roles.
+            </value>
+        </member>
+        <member name="M:GDPRiS.Api.Helpers.TokenAuthorizeAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Occurs before the action method is invoked.
+            </summary>
+            <param name="actionContext">The action context.</param>
+            <exception cref="T:GDPRiS.Common.Exceptions.AuthenticationException">
+            No Authorization header present
+            or
+            Authorization header cannot be empty
+            or
+            Invalid token!
+            or
+            Token expired! Please, login again
+            or
+            You do not have permission to access this resource!
+            </exception>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,15 @@
+C:\Users\Vesna\Desktop\Jelena\gdpr\InitialStandardWebApiSolution\GDPRiS.Common\bin\Release\GDPRiS.Common.dll
+C:\Users\Vesna\Desktop\Jelena\gdpr\InitialStandardWebApiSolution\GDPRiS.Common\bin\Release\GDPRiS.Common.pdb
+C:\Users\Vesna\Desktop\Jelena\gdpr\InitialStandardWebApiSolution\GDPRiS.Common\bin\Release\EPPlus.dll
+C:\Users\Vesna\Desktop\Jelena\gdpr\InitialStandardWebApiSolution\GDPRiS.Common\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\Vesna\Desktop\Jelena\gdpr\InitialStandardWebApiSolution\GDPRiS.Common\bin\Release\NPOI.dll
+C:\Users\Vesna\Desktop\Jelena\gdpr\InitialStandardWebApiSolution\GDPRiS.Common\bin\Release\NPOI.OOXML.dll
+C:\Users\Vesna\Desktop\Jelena\gdpr\InitialStandardWebApiSolution\GDPRiS.Common\bin\Release\NPOI.OpenXml4Net.dll
+C:\Users\Vesna\Desktop\Jelena\gdpr\InitialStandardWebApiSolution\GDPRiS.Common\bin\Release\NPOI.OpenXmlFormats.dll
+C:\Users\Vesna\Desktop\Jelena\gdpr\InitialStandardWebApiSolution\GDPRiS.Common\bin\Release\EPPlus.xml
+C:\Users\Vesna\Desktop\Jelena\gdpr\InitialStandardWebApiSolution\GDPRiS.Common\bin\Release\NPOI.xml
+C:\Users\Vesna\Desktop\Jelena\gdpr\InitialStandardWebApiSolution\GDPRiS.Common\obj\Release\GDPRiS.Common.csprojAssemblyReference.cache
+C:\Users\Vesna\Desktop\Jelena\gdpr\InitialStandardWebApiSolution\GDPRiS.Common\obj\Release\GDPRiS.Common.csproj.CoreCompileInputs.cache
+C:\Users\Vesna\Desktop\Jelena\gdpr\InitialStandardWebApiSolution\GDPRiS.Common\obj\Release\GDPRiS.Common.csproj.CopyComplete
+C:\Users\Vesna\Desktop\Jelena\gdpr\InitialStandardWebApiSolution\GDPRiS.Common\obj\Release\GDPRiS.Common.dll
+C:\Users\Vesna\Desktop\Jelena\gdpr\InitialStandardWebApiSolution\GDPRiS.Common\obj\Release\GDPRiS.Common.pdb

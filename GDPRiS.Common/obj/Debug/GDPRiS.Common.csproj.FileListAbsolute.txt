@@ -1,0 +1,15 @@
+\\nas\Projects\InitialStandardWebApiSolution\GDPRiS.Common\bin\Debug\GDPRiS.Common.dll
+\\nas\Projects\InitialStandardWebApiSolution\GDPRiS.Common\bin\Debug\GDPRiS.Common.pdb
+\\nas\Projects\InitialStandardWebApiSolution\GDPRiS.Common\bin\Debug\EPPlus.dll
+\\nas\Projects\InitialStandardWebApiSolution\GDPRiS.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+\\nas\Projects\InitialStandardWebApiSolution\GDPRiS.Common\bin\Debug\NPOI.dll
+\\nas\Projects\InitialStandardWebApiSolution\GDPRiS.Common\bin\Debug\NPOI.OOXML.dll
+\\nas\Projects\InitialStandardWebApiSolution\GDPRiS.Common\bin\Debug\NPOI.OpenXml4Net.dll
+\\nas\Projects\InitialStandardWebApiSolution\GDPRiS.Common\bin\Debug\NPOI.OpenXmlFormats.dll
+\\nas\Projects\InitialStandardWebApiSolution\GDPRiS.Common\bin\Debug\EPPlus.xml
+\\nas\Projects\InitialStandardWebApiSolution\GDPRiS.Common\bin\Debug\NPOI.xml
+\\nas\Projects\InitialStandardWebApiSolution\GDPRiS.Common\obj\Debug\GDPRiS.Common.csprojAssemblyReference.cache
+\\nas\Projects\InitialStandardWebApiSolution\GDPRiS.Common\obj\Debug\GDPRiS.Common.csproj.CoreCompileInputs.cache
+\\nas\Projects\InitialStandardWebApiSolution\GDPRiS.Common\obj\Debug\GDPRiS.Common.csproj.CopyComplete
+\\nas\Projects\InitialStandardWebApiSolution\GDPRiS.Common\obj\Debug\GDPRiS.Common.dll
+\\nas\Projects\InitialStandardWebApiSolution\GDPRiS.Common\obj\Debug\GDPRiS.Common.pdb
