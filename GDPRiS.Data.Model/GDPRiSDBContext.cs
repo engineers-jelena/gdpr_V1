@@ -25,5 +25,8 @@ namespace GDPRiS.Data.Model
 
         public DbSet<User> Users { get; set; }
         public DbSet<Phone> Phones { get; set; }
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }

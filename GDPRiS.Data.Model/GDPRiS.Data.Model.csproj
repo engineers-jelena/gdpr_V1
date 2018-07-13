@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="GDPRiSDBContext.cs" />
     <Compile Include="Migrations\201705011503481_initail_create.cs" />
     <Compile Include="Migrations\201705011503481_initail_create.Designer.cs">
