@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseModel.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Employee.cs" />
@@ -84,6 +85,30 @@
     <Compile Include="Migrations\201807121459131_addedForeignKey3.cs" />
     <Compile Include="Migrations\201807121459131_addedForeignKey3.Designer.cs">
       <DependentUpon>201807121459131_addedForeignKey3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807170959288_AddedCompanyCarEmploye.cs" />
+    <Compile Include="Migrations\201807170959288_AddedCompanyCarEmploye.Designer.cs">
+      <DependentUpon>201807170959288_AddedCompanyCarEmploye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807171103545_addedrelationemployeecompany.cs" />
+    <Compile Include="Migrations\201807171103545_addedrelationemployeecompany.Designer.cs">
+      <DependentUpon>201807171103545_addedrelationemployeecompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807171106469_addedrelationcaremployee.cs" />
+    <Compile Include="Migrations\201807171106469_addedrelationcaremployee.Designer.cs">
+      <DependentUpon>201807171106469_addedrelationcaremployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807171314485_finalizeddatabase.cs" />
+    <Compile Include="Migrations\201807171314485_finalizeddatabase.Designer.cs">
+      <DependentUpon>201807171314485_finalizeddatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807181256413_addedenumsforcompany.cs" />
+    <Compile Include="Migrations\201807181256413_addedenumsforcompany.Designer.cs">
+      <DependentUpon>201807181256413_addedenumsforcompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807181453180_addedbasemodelforcompany.cs" />
+    <Compile Include="Migrations\201807181453180_addedbasemodelforcompany.Designer.cs">
+      <DependentUpon>201807181453180_addedbasemodelforcompany.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Phone.cs" />
@@ -124,6 +149,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807121459131_addedForeignKey3.resx">
       <DependentUpon>201807121459131_addedForeignKey3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807170959288_AddedCompanyCarEmploye.resx">
+      <DependentUpon>201807170959288_AddedCompanyCarEmploye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807171103545_addedrelationemployeecompany.resx">
+      <DependentUpon>201807171103545_addedrelationemployeecompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807171106469_addedrelationcaremployee.resx">
+      <DependentUpon>201807171106469_addedrelationcaremployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807171314485_finalizeddatabase.resx">
+      <DependentUpon>201807171314485_finalizeddatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807181256413_addedenumsforcompany.resx">
+      <DependentUpon>201807181256413_addedenumsforcompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807181453180_addedbasemodelforcompany.resx">
+      <DependentUpon>201807181453180_addedbasemodelforcompany.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

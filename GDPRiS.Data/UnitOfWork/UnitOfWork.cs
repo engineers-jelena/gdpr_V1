@@ -19,6 +19,9 @@ namespace GDPRiS.Data
 
         private GenericRepository<User> userRepository;
         private GenericRepository<Phone> phoneRepository;
+        private GenericRepository<Company> companyRepository;
+        private GenericRepository<Employee> employeeRepository;
+        private GenericRepository<Car> carRepository;
 
         #endregion Fields
 
@@ -53,6 +56,28 @@ namespace GDPRiS.Data
             }
         }
 
+        public GenericRepository<Employee> EmployeeRepository
+        {
+            get
+            {
+                return employeeRepository ?? (employeeRepository = new GenericRepository<Employee>(DataContext));
+            }
+        }
+        public GenericRepository<Company> CompanyRepository
+        {
+            get
+            {
+                return companyRepository ?? (companyRepository = new GenericRepository<Company>(DataContext));
+            }
+        }
+
+        public GenericRepository<Car> CarRepository
+        {
+            get
+            {
+                return carRepository ?? (carRepository = new GenericRepository<Car>(DataContext));
+            }
+        }
         #endregion Repository
 
         #endregion Properties

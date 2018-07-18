@@ -149,6 +149,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -157,6 +158,9 @@
     <Compile Include="Helpers\GlobalExceptionHandler.cs" />
     <Compile Include="Helpers\TokenAuthorizeAttribute.cs" />
     <Compile Include="Helpers\ValidateModelAttribute.cs" />
+    <Compile Include="Models\Company\CompanyEmployeeModel.cs" />
+    <Compile Include="Models\Company\EmployeeCarModel.cs" />
+    <Compile Include="Models\Company\RegisterCompanyModel.cs" />
     <Compile Include="Models\User\BaseUserModel.cs" />
     <Compile Include="Models\User\UserJwtModel.cs" />
     <Compile Include="Models\User\UserLoginModel.cs" />

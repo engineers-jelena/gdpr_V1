@@ -16,6 +16,7 @@ using GDPRiS.Api.Models.User;
 using GDPRiS.Common.Enums;
 using GDPRiS.Common.Exceptions;
 using System.ComponentModel.DataAnnotations;
+using GDPRiS.Api.Models.Company;
 
 namespace GDPRiS.Api.Controllers
 {
@@ -46,9 +47,7 @@ namespace GDPRiS.Api.Controllers
             return new { User = userModel, Token = CreateLoginToken(user) };
         }
 
-        #region Helena
-
-        #endregion
+        
 
         /// <summary>
         /// Temperery method/during development.

@@ -10,4 +10,9 @@ namespace GDPRiS.Common.Enums
     {
         Admin = 1
     }
+
+    public enum MarkCar
+    {
+        Huyndai = 1, Peugeot, BMW, AUDI
+    }
 }

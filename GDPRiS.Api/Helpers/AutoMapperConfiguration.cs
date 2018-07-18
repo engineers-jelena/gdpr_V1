@@ -7,6 +7,7 @@ using System.Web.ClientServices.Providers;
 using System.Web.UI;
 using AutoMapper;
 using GDPRiS.Api.Models.User;
+using GDPRiS.Api.Models.Company;
 using GDPRiS.Data.Model;
 
 namespace GDPRiS.Api.Helpers
@@ -19,6 +20,10 @@ namespace GDPRiS.Api.Helpers
             CreateMap<User, UserRegisterModel>().ReverseMap();
             CreateMap<User, UserJwtModel>().ReverseMap();
             CreateMap<UserSearchModel, User>().ReverseMap();
+            CreateMap<Company, RegisterCompanyModel>().ReverseMap();
+            CreateMap<Company, CompanyEmployeeModel>().ReverseMap();
+            
+
         }
     }
 }

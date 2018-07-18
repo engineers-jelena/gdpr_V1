@@ -37,6 +37,7 @@ namespace GDPRiS.Core
                     throw new ValidationException("Wrong email or password!");
 
                 return user;
+
             }
         }
 

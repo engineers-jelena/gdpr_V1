@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using GDPRiS.Api.Models.Company;
 using System.Web.Http.Controllers;
 using GDPRiS.Api.Models.User;
+
 
 namespace GDPRiS.Api.Controllers
 {
@@ -15,6 +17,9 @@ namespace GDPRiS.Api.Controllers
 
         private UserManager userManager;
         protected UserManager UserManager => userManager ?? (userManager = new UserManager());
+
+        private CompanyManager companyManager;
+        protected CompanyManager CompanyManager => companyManager ?? (companyManager = new CompanyManager());
 
         protected override void Initialize(HttpControllerContext controllerContext)
         {
