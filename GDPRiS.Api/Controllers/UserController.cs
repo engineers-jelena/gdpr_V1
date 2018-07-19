@@ -33,7 +33,7 @@ namespace GDPRiS.Api.Controllers
         [HttpPost]
         public object Login(UserLoginModel model)
         {
-            User user = UserManager.Login(model.Email, model.Password);
+            Users user = UserManager.Login(model.Email, model.Password);
             UserModel userModel = Mapper.Map<UserModel>(user);
             if (user.Role == Role.Admin)
             {
@@ -62,15 +62,15 @@ namespace GDPRiS.Api.Controllers
             if (model.Password != model.ConfirmPassword)
                 throw new Common.Exceptions.ValidationException("Password confirmation not valid!");
           
-            User user = new Data.Model.User { Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.ConfirmPassword, Username = model.Username };
-            User registeredUser = UserManager.Register(user);
+            Users user = new Data.Model.Users { Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.ConfirmPassword, Username = model.Username };
+            Users registeredUser = UserManager.Register(user);
 
             UserModel userModel = new UserModel { Email = registeredUser.Email, FirstName = registeredUser.FirstName, Id = registeredUser.Id, IsAdmin = true, LastName =  registeredUser.LastName, RegistrationDate = registeredUser.DateCreated };
             return new { User = userModel, Token = CreateLoginToken(user) };
         }
 
         [NonAction]
-        private string CreateLoginToken(User user)
+        private string CreateLoginToken(Users user)
         {
             UserJwtModel userModel = Mapper.Map<UserJwtModel>(user);
             userModel.ExpirationDate = DateTime.UtcNow.AddDays(1);
@@ -105,7 +105,7 @@ namespace GDPRiS.Api.Controllers
         [HttpGet]
         public bool ForgotPassword(string email)
         {
-            User user = UserManager.GetByEmail(email);
+            Users user = UserManager.GetByEmail(email);
             Guid confirmHash = Guid.NewGuid();
             user = UserManager.ForgotPasswordUpdate(user.Id, confirmHash.ToString());
 
@@ -141,7 +141,7 @@ namespace GDPRiS.Api.Controllers
         [HttpGet]
         public RedirectResult ResetPasswordConfirmation(string hash)
         {
-            User user = UserManager.GetByHash(hash);
+            Users user = UserManager.GetByHash(hash);
             return Redirect($"{ConfigurationManager.AppSettings["SiteUrl"]}/ConfirmPassword/{hash}");
         }
 
@@ -155,7 +155,7 @@ namespace GDPRiS.Api.Controllers
         [HttpPut]
         public bool SetNewPassword(UserResetPasswordModel model)
         {
-            User user = UserManager.GetByHash(model.ConfirmHash);
+            Users user = UserManager.GetByHash(model.ConfirmHash);
             UserManager.NewPasswordUpdate(user.Id, model.NewPassword);
 
             return true;
@@ -165,7 +165,7 @@ namespace GDPRiS.Api.Controllers
         [HttpGet]
         public List<UserSearchModel> UserSearch(string firstName)
         {
-            List<User> foundUsers =  UserManager.SearchUser(firstName);
+            List<Users> foundUsers =  UserManager.SearchUser(firstName);
 
            return foundUsers.Select(u => new UserSearchModel { Email = u.Email, FullName = u.FirstName + " " + u.LastName, Username = u.Username , Phones = u.Phones.Select(p => p.PhoneNumber).ToList()}).ToList();
         }
@@ -174,7 +174,7 @@ namespace GDPRiS.Api.Controllers
         [HttpPost]
         public UserSearchModel UserAddPhones(UsersPhoneModel model)
         {
-            User userDb = UserManager.UserAddPhones(model.UserId, model.PhoneNumbers);
+            Users userDb = UserManager.UserAddPhones(model.UserId, model.PhoneNumbers);
             UserSearchModel viewModel = Mapper.Map<UserSearchModel>(userDb);
             viewModel.Phones = userDb.Phones.Select(u => u.PhoneNumber).ToList();
 
@@ -192,9 +192,9 @@ namespace GDPRiS.Api.Controllers
         [AllowAnonymous]
         [HttpPost]
 
-        public User UpdateUser(UserModel model)
+        public Users UpdateUser(UserModel model)
         {
-            User editedUser = UserManager.UpdateUser(Mapper.Map<User>(model));
+            Users editedUser = UserManager.UpdateUser(Mapper.Map<Users>(model));
             return editedUser;
         }
 

@@ -30,8 +30,8 @@ namespace GDPRiS.Api.Controllers
         [HttpPost]
         public object Register(RegisterCompanyModel model)
         {
-            Company company = new Data.Model.Company {nameOfCompany = model.nameOfCompany };
-            Company registeredCompany = CompanyManager.Register(company);
+            Companies company = new Data.Model.Companies {nameOfCompany = model.nameOfCompany };
+            Companies registeredCompany = CompanyManager.Register(company);
             RegisterCompanyModel modelNew = Mapper.Map<RegisterCompanyModel>(company);
 
             return new {modelNew};
@@ -57,7 +57,7 @@ namespace GDPRiS.Api.Controllers
         [HttpPost]
         public CompanyEmployeeModel AddEmployees(CompanyEmployeeModel model)
         {
-            Company companyDb = CompanyManager.CompanyAddPEmployee(model.idCompany, model.NameEmployee);
+            Companies companyDb = CompanyManager.CompanyAddPEmployee(model.idCompany, model.NameEmployee);
             CompanyEmployeeModel viewModel = Mapper.Map<CompanyEmployeeModel>(companyDb);
             viewModel.NameEmployee = companyDb.Employees.Select(u => u.NameOfEmployee).ToList();
 

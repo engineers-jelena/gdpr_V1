@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GDPRiS.Data.Model
 {
-    public class Phone
+    public class Phones
     {
         
         [Key]
@@ -19,7 +19,7 @@ namespace GDPRiS.Data.Model
         [ForeignKey("User")]
         public int UserId { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual Users User { get; set; }
 
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }

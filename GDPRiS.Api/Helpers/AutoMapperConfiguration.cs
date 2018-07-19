@@ -16,12 +16,12 @@ namespace GDPRiS.Api.Helpers
     {
         public AutoMapperConfigurationProfile()
         {
-            CreateMap<User, UserModel>().ReverseMap();
-            CreateMap<User, UserRegisterModel>().ReverseMap();
-            CreateMap<User, UserJwtModel>().ReverseMap();
-            CreateMap<UserSearchModel, User>().ReverseMap();
-            CreateMap<Company, RegisterCompanyModel>().ReverseMap();
-            CreateMap<Company, CompanyEmployeeModel>().ReverseMap();
+            CreateMap<Users, UserModel>().ReverseMap();
+            CreateMap<Users, UserRegisterModel>().ReverseMap();
+            CreateMap<Users, UserJwtModel>().ReverseMap();
+            CreateMap<UserSearchModel, Users>().ReverseMap();
+            CreateMap<Companies, RegisterCompanyModel>().ReverseMap();
+            CreateMap<Companies, CompanyEmployeeModel>().ReverseMap();
             
 
         }

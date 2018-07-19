@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace GDPRiS.Data.Model
 {
-    public class Company : BaseModel
+    public class Companies : BaseModel
     {
 
         public string nameOfCompany { get; set; }
 
-        public virtual List<Employee> Employees { get; set; }
+        public virtual List<Employees> Employees { get; set; }
 
     }
 }

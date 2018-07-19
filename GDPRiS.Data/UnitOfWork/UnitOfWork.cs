@@ -17,11 +17,11 @@ namespace GDPRiS.Data
         /// </summary>
         private GDPRiSDBContext context;
 
-        private GenericRepository<User> userRepository;
-        private GenericRepository<Phone> phoneRepository;
-        private GenericRepository<Company> companyRepository;
-        private GenericRepository<Employee> employeeRepository;
-        private GenericRepository<Car> carRepository;
+        private GenericRepository<Users> userRepository;
+        private GenericRepository<Phones> phoneRepository;
+        private GenericRepository<Companies> companyRepository;
+        private GenericRepository<Employees> employeeRepository;
+        private GenericRepository<Cars> carRepository;
 
         #endregion Fields
 
@@ -40,42 +40,42 @@ namespace GDPRiS.Data
 
         #region Repository
 
-        public GenericRepository<User> UserRepository
+        public GenericRepository<Users> UserRepository
         {
             get
             {
-                return userRepository ?? (userRepository = new GenericRepository<User>(DataContext));
+                return userRepository ?? (userRepository = new GenericRepository<Users>(DataContext));
             }
         }
 
-        public GenericRepository<Phone> PhoneRepository
+        public GenericRepository<Phones> PhoneRepository
         {
             get
             {
-                return phoneRepository ?? (phoneRepository = new GenericRepository<Phone>(DataContext));
+                return phoneRepository ?? (phoneRepository = new GenericRepository<Phones>(DataContext));
             }
         }
 
-        public GenericRepository<Employee> EmployeeRepository
+        public GenericRepository<Employees> EmployeeRepository
         {
             get
             {
-                return employeeRepository ?? (employeeRepository = new GenericRepository<Employee>(DataContext));
+                return employeeRepository ?? (employeeRepository = new GenericRepository<Employees>(DataContext));
             }
         }
-        public GenericRepository<Company> CompanyRepository
+        public GenericRepository<Companies> CompanyRepository
         {
             get
             {
-                return companyRepository ?? (companyRepository = new GenericRepository<Company>(DataContext));
+                return companyRepository ?? (companyRepository = new GenericRepository<Companies>(DataContext));
             }
         }
 
-        public GenericRepository<Car> CarRepository
+        public GenericRepository<Cars> CarRepository
         {
             get
             {
-                return carRepository ?? (carRepository = new GenericRepository<Car>(DataContext));
+                return carRepository ?? (carRepository = new GenericRepository<Cars>(DataContext));
             }
         }
         #endregion Repository

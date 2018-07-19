@@ -23,10 +23,10 @@ namespace GDPRiS.Data.Model
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<Phone> Phones { get; set; }
-        public DbSet<Car> Cars { get; set; }
-        public DbSet<Company> Companies { get; set; }
-        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Users> Users { get; set; }
+        public DbSet<Phones> Phones { get; set; }
+        public DbSet<Companies> Companies { get; set; }
+        public DbSet<Employees> Employees { get; set; }
+        public DbSet<Cars> Cars { get; set; }
     }
 }

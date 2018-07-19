@@ -7,13 +7,13 @@ namespace GDPRiS.Data.Model.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addedForeignKey3 : IMigrationMetadata
+    public sealed partial class Helena : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addedForeignKey3));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Helena));
         
         string IMigrationMetadata.Id
         {
-            get { return "201807121459131_addedForeignKey3"; }
+            get { return "201807191020302_Helena"; }
         }
         
         string IMigrationMetadata.Source

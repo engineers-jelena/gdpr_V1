@@ -20,7 +20,7 @@ namespace GDPRiS.Core
 
         #region Register Company
 
-        public Company Register(Company company)
+        public Companies Register(Companies company)
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
@@ -28,7 +28,7 @@ namespace GDPRiS.Core
                 company.DateCreated = DateTime.UtcNow;
                 uow.CompanyRepository.Insert(company);
                 uow.Save();
-                 uow.CompanyRepository.GetById(company.id);
+                 uow.CompanyRepository.GetById(company.Id);
                 return company;
             }
         }
@@ -42,7 +42,7 @@ namespace GDPRiS.Core
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
-                Company company = uow.CompanyRepository.GetById(companyId);
+                Companies company = uow.CompanyRepository.GetById(companyId);
                 ValidationHelper.ValidateNotNull(company);
 
                 company.DateDeleted = DateTime.UtcNow;
@@ -57,19 +57,19 @@ namespace GDPRiS.Core
         #region add Employee
 
 
-        public Company CompanyAddPEmployee(int companyId, List<string> employees)
+        public Companies CompanyAddPEmployee(int companyId, List<string> employees)
         {
 
             using (UnitOfWork uow = new UnitOfWork())
             {
-                Company companyDb = uow.CompanyRepository.Find(u => u.id == companyId).FirstOrDefault();
+                Companies companyDb = uow.CompanyRepository.Find(u => u.Id == companyId).FirstOrDefault();
                 ValidationHelper.ValidateNotNull(companyDb);
 
                 DateTime now = DateTime.UtcNow;
 
                 foreach (string employee in employees)
                 {
-                    Employee newEmployee = new Employee { DateCreated = now, DateModified = now, NameOfEmployee = employee, CompanyId = companyId };
+                    Employees newEmployee = new Employees { DateCreated = now, DateModified = now, NameOfEmployee = employee, CompanyId = companyId };
                     uow.EmployeeRepository.Insert(newEmployee);
                 }
 

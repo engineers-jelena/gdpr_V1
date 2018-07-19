@@ -10,7 +10,7 @@ namespace GDPRiS.Data.Model
     public class BaseModel
     {
         [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }

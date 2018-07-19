@@ -8,17 +8,21 @@ using System.Threading.Tasks;
 
 namespace GDPRiS.Data.Model
 {
-    public class Employee : BaseModel
+    public class Employees
     {
-
+        [Key]
+        public int EmployeeId { get; set; }
         public string NameOfEmployee { get; set; }
+        public DateTime DateCreated { get; set; }
+        public DateTime DateModified { get; set; }
+        public DateTime DateDeleted { get; set; }
 
         [ForeignKey("Company")]
         public int CompanyId { get; set; }
 
-        public virtual Company Company { get; set; }
+        public virtual Companies Company { get; set; }
 
-        public virtual List<Car> Cars { get; set; }
+        //public virtual List<Car> Cars { get; set; }
 
     }
 }

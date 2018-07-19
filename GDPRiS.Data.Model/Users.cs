@@ -10,7 +10,7 @@ using GDPRiS.Common.Enums;
 
 namespace GDPRiS.Data.Model
 {
-    public class User
+    public class Users
     {
         [Key]
         public int Id { get; set; }
@@ -34,7 +34,7 @@ namespace GDPRiS.Data.Model
         public Role Role { get; set; }
 
         public bool IsActive { get; set; }
-        public virtual List<Phone> Phones { get; set; }
+        public virtual List<Phones> Phones { get; set; }
 
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }

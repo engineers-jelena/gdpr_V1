@@ -19,7 +19,7 @@ namespace GDPRiS.Core
     {
         #region Login and Register
 
-        public User Login(string email, string password)
+        public Users Login(string email, string password)
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
@@ -41,11 +41,11 @@ namespace GDPRiS.Core
             }
         }
 
-        public User Register(User user)
+        public Users Register(Users user)
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
-                User existingUser = (uow.UserRepository.Find(u => u.Email == user.Email)).FirstOrDefault();
+                Users existingUser = (uow.UserRepository.Find(u => u.Email == user.Email)).FirstOrDefault();
                 if (existingUser != null)
                 {
                     throw new ValidationException("Account email is already taken!");
@@ -61,7 +61,7 @@ namespace GDPRiS.Core
                 uow.UserRepository.Insert(user);
                 uow.Save();
 
-                User newUser = uow.UserRepository.GetById(user.Id);
+                Users newUser = uow.UserRepository.GetById(user.Id);
 
                 return newUser;
             }
@@ -72,7 +72,7 @@ namespace GDPRiS.Core
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
-                User user = uow.UserRepository.Find(u => u.Email.ToLower().Trim() == email.ToLower().Trim()).FirstOrDefault();
+                Users user = uow.UserRepository.Find(u => u.Email.ToLower().Trim() == email.ToLower().Trim()).FirstOrDefault();
 
                 if (userId.HasValue) return user != null && user.Id != userId.Value;
 
@@ -82,22 +82,22 @@ namespace GDPRiS.Core
 
         #endregion
 
-        public User GetByEmail(string email)
+        public Users GetByEmail(string email)
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
-                User user = uow.UserRepository.Find(u => u.Email.ToLower().Trim() == email.ToLower().Trim()).FirstOrDefault();
+                Users user = uow.UserRepository.Find(u => u.Email.ToLower().Trim() == email.ToLower().Trim()).FirstOrDefault();
                 ValidationHelper.ValidateNotNull(user);
 
                 return user;
             }
         }
 
-        public User GetByHash(string confirmHash)
+        public Users GetByHash(string confirmHash)
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
-                User user = uow.UserRepository.Find(a => a.Password == confirmHash).FirstOrDefault();
+                Users user = uow.UserRepository.Find(a => a.Password == confirmHash).FirstOrDefault();
                 ValidationHelper.ValidateNotNull(user);
 
                 return user;
@@ -112,11 +112,11 @@ namespace GDPRiS.Core
         //    }
         //}
 
-        public User ForgotPasswordUpdate(int userId, string hashCode)
+        public Users ForgotPasswordUpdate(int userId, string hashCode)
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
-                User userFromDb = uow.UserRepository.GetById(userId);
+                Users userFromDb = uow.UserRepository.GetById(userId);
                 ValidationHelper.ValidateNotNull(userFromDb);
 
                 userFromDb.Password = hashCode;
@@ -129,11 +129,11 @@ namespace GDPRiS.Core
             }
         }
 
-        public User NewPasswordUpdate(int userId, string password)
+        public Users NewPasswordUpdate(int userId, string password)
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
-                User userFromDb = uow.UserRepository.GetById(userId);
+                Users userFromDb = uow.UserRepository.GetById(userId);
                 ValidationHelper.ValidateNotNull(userFromDb);
 
                 if (!string.IsNullOrWhiteSpace(password))
@@ -152,7 +152,7 @@ namespace GDPRiS.Core
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
-                User user = uow.UserRepository.GetById(memberId);
+                Users user = uow.UserRepository.GetById(memberId);
                 ValidationHelper.ValidateNotNull(user);
 
                 if (!PasswordHelper.ValidatePassword(oldPassword, user.Password))
@@ -167,11 +167,11 @@ namespace GDPRiS.Core
             }
         }
 
-        public List<User> SearchUser (string firstName)
+        public List<Users> SearchUser (string firstName)
         { 
             using (UnitOfWork uow = new UnitOfWork())
             {
-                List<User> users = uow.UserRepository.Find(u => !u.DateDeleted.HasValue && (u.FirstName.IndexOf(firstName) != -1 || string.IsNullOrEmpty(firstName)), includeProperties: "Phones");
+                List<Users> users = uow.UserRepository.Find(u => !u.DateDeleted.HasValue && (u.FirstName.IndexOf(firstName) != -1 || string.IsNullOrEmpty(firstName)), includeProperties: "Phones");
   
                 return users;
             }
@@ -180,11 +180,11 @@ namespace GDPRiS.Core
 
      
 
-        public User GetById(int userId)
+        public Users GetById(int userId)
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
-                User user = uow.UserRepository.GetById(userId);
+                Users user = uow.UserRepository.GetById(userId);
                 ValidationHelper.ValidateNotNull(user);
 
                 return user;
@@ -195,7 +195,7 @@ namespace GDPRiS.Core
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
-                User user = uow.UserRepository.GetById(userId);
+                Users user = uow.UserRepository.GetById(userId);
                 ValidationHelper.ValidateNotNull(user);
 
                 user.DateDeleted = DateTime.UtcNow;
@@ -205,11 +205,11 @@ namespace GDPRiS.Core
             }
         }
 
-        public User UpdateUser(User modifiedUser)
+        public Users UpdateUser(Users modifiedUser)
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
-                User userFromDb = uow.UserRepository.GetById(modifiedUser.Id);
+                Users userFromDb = uow.UserRepository.GetById(modifiedUser.Id);
                 ValidationHelper.ValidateNotNull(userFromDb);
 
                 userFromDb.FirstName = modifiedUser.FirstName;
@@ -227,19 +227,19 @@ namespace GDPRiS.Core
             }
         }
 
-        public User UserAddPhones(int userId, List<string> phones)
+        public Users UserAddPhones(int userId, List<string> phones)
         {
 
             using (UnitOfWork uow = new UnitOfWork())
             {
-                User userDb = uow.UserRepository.Find(u => u.Id == userId).FirstOrDefault();
+                Users userDb = uow.UserRepository.Find(u => u.Id == userId).FirstOrDefault();
                 ValidationHelper.ValidateNotNull(userDb);
 
                 DateTime now = DateTime.UtcNow;
 
                 foreach (string phone in phones)
                 {
-                    Phone newPhone = new Phone { DateCreated = now, DateModified = now, PhoneNumber = phone, UserId = userId };
+                    Phones newPhone = new Phones { DateCreated = now, DateModified = now, PhoneNumber = phone, UserId = userId };
                     uow.PhoneRepository.Insert(newPhone);
                 }
 
@@ -249,11 +249,11 @@ namespace GDPRiS.Core
             }
         }
 
-        public List<User> listOfUsers()
+        public List<Users> listOfUsers()
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
-                List<User> allUsers = uow.UserRepository.GetAll();
+                List<Users> allUsers = uow.UserRepository.GetAll();
 
             return allUsers;
             }
